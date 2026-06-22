@@ -16,6 +16,11 @@ MobileAutomationQA/
 └── tests/
     └── demo_test.robot         # The main test suite containing execution steps
 
+App:
+https://github.com/saucelabs/sample-app-mobile/releases/tag/2.6.0
+
+
+
 How to run:
 
 robot -d results tests/demo_test.robot
