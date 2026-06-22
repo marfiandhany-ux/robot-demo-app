@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.14 on darwin)" generated="2026-06-22T14:51:07.244369" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo Test" source="/Users/fd-it/FDN-QA/robot-demo-app/tests/demo_test.robot">
+<test id="s1-t1" name="TC-001: Negative Login - Locked Out User" line="9">
+<kw name="Base Setup" owner="step" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP_LOCATION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=com.swaglabsmobileapp</arg>
+<arg>appWaitActivity=com.swaglabsmobileapp.*</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2026-06-22T14:51:07.445364" elapsed="10.731216"/>
+</kw>
+<status status="PASS" start="2026-06-22T14:51:07.444947" elapsed="10.732262"/>
+</kw>
+<kw name="Login" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:18.179373" elapsed="1.167958"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:19.351726" level="INFO">Typing text 'locked_out_user' into text field 'accessibility_id=test-Username'</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:19.349311" elapsed="0.583531"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:19.935276" level="INFO">Typing text 'secret_sauce' into text field 'accessibility_id=test-Password'</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:19.933048" elapsed="1.092602"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:21.030786" level="INFO">Clicking element 'accessibility_id=test-LOGIN'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:21.027524" elapsed="0.634129"/>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-06-22T14:51:18.178606" elapsed="3.483508"/>
+</kw>
+<kw name="Verify Error Message" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ERROR_MSG}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:21.664208" elapsed="0.620688"/>
+</kw>
+<kw name="Page Should Contain Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:22.358626" level="INFO">Current page contains text 'Sorry, this user has been locked out.'.</msg>
+<arg>Sorry, this user has been locked out.</arg>
+<doc>Verifies that the current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-22T14:51:22.285292" elapsed="0.073452"/>
+</kw>
+<arg>Sorry, this user has been locked out.</arg>
+<status status="PASS" start="2026-06-22T14:51:21.663232" elapsed="0.695613"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2026-06-22T14:51:22.359228" elapsed="0.383959"/>
+</kw>
+<doc>Validates the system rejects a locked-out account.</doc>
+<status status="PASS" start="2026-06-22T14:51:07.444398" elapsed="15.299723"/>
+</test>
+<test id="s1-t2" name="TC-002: Positive Login - Standard User" line="14">
+<kw name="Base Setup" owner="step" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP_LOCATION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=com.swaglabsmobileapp</arg>
+<arg>appWaitActivity=com.swaglabsmobileapp.*</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2026-06-22T14:51:22.747443" elapsed="5.494830"/>
+</kw>
+<status status="PASS" start="2026-06-22T14:51:22.746620" elapsed="5.496313"/>
+</kw>
+<kw name="Login" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:28.245580" elapsed="1.134007"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:29.383290" level="INFO">Typing text 'standard_user' into text field 'accessibility_id=test-Username'</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:29.379911" elapsed="0.582699"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:29.965221" level="INFO">Typing text 'secret_sauce' into text field 'accessibility_id=test-Password'</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:29.963162" elapsed="1.091862"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:31.056806" level="INFO">Clicking element 'accessibility_id=test-LOGIN'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:31.055268" elapsed="0.811063"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-06-22T14:51:28.244342" elapsed="3.622848"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${INVENTORY_PAGE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:31.868314" elapsed="1.249621"/>
+</kw>
+<kw name="Logout" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${MENU_BTN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:33.120852" elapsed="0.051253"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:33.174343" level="INFO">Clicking element 'accessibility_id=test-Menu'.</msg>
+<arg>${MENU_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:33.172327" elapsed="0.118319"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGOUT_BTN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:33.290882" elapsed="1.644421"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:34.937291" level="INFO">Clicking element 'accessibility_id=test-LOGOUT'.</msg>
+<arg>${LOGOUT_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:34.935703" elapsed="0.121791"/>
+</kw>
+<status status="PASS" start="2026-06-22T14:51:33.119916" elapsed="1.937769"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_BTN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:35.057990" elapsed="1.667667"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2026-06-22T14:51:36.727048" elapsed="0.386610"/>
+</kw>
+<doc>Validates a standard user can successfully log in and log out.</doc>
+<status status="PASS" start="2026-06-22T14:51:22.745414" elapsed="14.368534"/>
+</test>
+<test id="s1-t3" name="TC-003: E2E Checkout - Add Item to Cart and Complete Purchase" line="21">
+<kw name="Base Setup" owner="step" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP_LOCATION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=com.swaglabsmobileapp</arg>
+<arg>appWaitActivity=com.swaglabsmobileapp.*</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2026-06-22T14:51:37.116411" elapsed="5.366642"/>
+</kw>
+<status status="PASS" start="2026-06-22T14:51:37.116006" elapsed="5.369748"/>
+</kw>
+<kw name="Login" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:42.491272" elapsed="1.102597"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:43.597553" level="INFO">Typing text 'standard_user' into text field 'accessibility_id=test-Username'</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:43.594555" elapsed="0.577760"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:44.173942" level="INFO">Typing text 'secret_sauce' into text field 'accessibility_id=test-Password'</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:44.172508" elapsed="1.074065"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:45.248858" level="INFO">Clicking element 'accessibility_id=test-LOGIN'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:45.246889" elapsed="0.627548"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-06-22T14:51:42.490310" elapsed="3.384847"/>
+</kw>
+<kw name="Add to Cart - Checkout" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:46.920481" level="INFO">xpath criteria: (//android.view.ViewGroup[@content-desc="test-ADD TO CART"])</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:45.878319" elapsed="1.042473"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:46.923091" level="INFO">Clicking element 'xpath=(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])'.</msg>
+<msg time="2026-06-22T14:51:47.056310" level="INFO">xpath criteria: (//android.view.ViewGroup[@content-desc="test-ADD TO CART"])</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:46.921197" elapsed="0.135295"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:47.059683" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="test-Cart"]/android.view.ViewGroup'.</msg>
+<msg time="2026-06-22T14:51:47.995999" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="test-Cart"]/android.view.ViewGroup</msg>
+<arg>${CART_ICON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:47.056804" elapsed="0.939813"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-22T14:51:49.002366" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-22T14:51:47.997597" elapsed="1.005136"/>
+</kw>
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+<doc>Swipes from one percent of the screen to another percent, for an optional ``duration``.
+Normal swipe fails to scale for different screen resolutions, this can be avoided by using this keyword.</doc>
+<status status="PASS" start="2026-06-22T14:51:49.003258" elapsed="1.386691"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${CHECKOUT_BTN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:50.393211" elapsed="0.656549"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:51.052584" level="INFO">Clicking element 'accessibility_id=test-CHECKOUT'.</msg>
+<arg>${CHECKOUT_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:51.050083" elapsed="0.087692"/>
+</kw>
+<status status="PASS" start="2026-06-22T14:51:45.877681" elapsed="5.260471"/>
+</kw>
+<kw name="Shipping" owner="step">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${FIRST_NAME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:51.139940" elapsed="1.049275"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:52.191963" level="INFO">Typing text 'Dhany' into text field 'accessibility_id=test-First Name'</msg>
+<arg>${FIRST_NAME}</arg>
+<arg>${input_first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:52.189570" elapsed="0.618255"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:52.810819" level="INFO">Typing text 'QA' into text field 'accessibility_id=test-Last Name'</msg>
+<arg>${LAST_NAME}</arg>
+<arg>${input_last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:52.808452" elapsed="1.186662"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:53.998317" level="INFO">Typing text '12345' into text field 'accessibility_id=test-Zip/Postal Code'</msg>
+<arg>${POSTAL_CODE}</arg>
+<arg>${input_zip}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:53.995468" elapsed="1.170058"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:55.178701" level="INFO">Clicking element 'accessibility_id=test-CONTINUE'.</msg>
+<arg>${CONTINUE_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:55.171963" elapsed="0.774307"/>
+</kw>
+<arg>Dhany</arg>
+<arg>QA</arg>
+<arg>12345</arg>
+<status status="PASS" start="2026-06-22T14:51:51.139172" elapsed="4.807517"/>
+</kw>
+<kw name="Checkout" owner="step">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-22T14:51:56.951352" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-22T14:51:55.948662" elapsed="1.003218"/>
+</kw>
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>20</arg>
+<doc>Swipes from one percent of the screen to another percent, for an optional ``duration``.
+Normal swipe fails to scale for different screen resolutions, this can be avoided by using this keyword.</doc>
+<status status="PASS" start="2026-06-22T14:51:56.952435" elapsed="1.505225"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:59.649688" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="test-FINISH"]</msg>
+<arg>${FINISH_BTN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:58.460187" elapsed="1.189759"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-22T14:51:59.653305" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="test-FINISH"]'.</msg>
+<msg time="2026-06-22T14:51:59.982102" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="test-FINISH"]</msg>
+<arg>${FINISH_BTN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-22T14:51:59.650405" elapsed="0.331953"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-06-22T14:52:02.215668" level="INFO">xpath criteria: //android.widget.ScrollView[@content-desc="test-CHECKOUT: COMPLETE!"]/android.view.ViewGroup/android.widget.TextView[1]
+xpath criteria: //android.widget.ScrollView[@content-desc="test-CHECKOUT: COMPLETE!"]/android.view.ViewGroup/android.widget.TextView[1]</msg>
+<arg>${SUCCESS_HEADER}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-22T14:51:59.982745" elapsed="2.234021"/>
+</kw>
+<status status="PASS" start="2026-06-22T14:51:55.947911" elapsed="6.269739"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2026-06-22T14:52:02.219776" elapsed="1.259866"/>
+</kw>
+<doc>End-to-End flow: Login, add an item, and successfully check out.</doc>
+<status status="PASS" start="2026-06-22T14:51:37.114705" elapsed="26.366020"/>
+</test>
+<status status="PASS" start="2026-06-22T14:51:07.245237" elapsed="56.240709"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Demo Test" id="s1" pass="3" fail="0" skip="0">Demo Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
